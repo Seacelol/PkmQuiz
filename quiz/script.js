@@ -1,3 +1,4 @@
+//array com as perguntas e respostas
 const quizData = [
     {
         questao: 'Qual o nome do z-move exclusivo do Mew?',
@@ -86,7 +87,7 @@ let currentQuiz = 0;
 let pontos = 0;
 
 loadQuiz();
-
+//função que carrega as perguntas e respostas na tela
 function loadQuiz() {   
     
     const currentQuizData = quizData[currentQuiz];
@@ -98,7 +99,7 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 
 }
-
+//função que registra as respostas dadas no quiz
 function getSelecionado() {
     const respostaEls = document.querySelectorAll('.resposta');
 
@@ -110,7 +111,7 @@ function getSelecionado() {
 
     return resposta;
 }
-
+//faz o botão chamar a função de pegar a resposta, registra os pontos, chama a proxima pergunta e respostas e finaliza caso não haja mais perguntas
 enviarBtn.addEventListener('click', () =>{
     
     const resposta = getSelecionado();
@@ -132,7 +133,7 @@ enviarBtn.addEventListener('click', () =>{
     deselectResposta();
     
 });
-
+//retira a marcação da caixa de respostas quando passa para a próxima pergunta
 function deselectResposta() {
     const respostaEls = document.querySelectorAll ('.resposta');
     
