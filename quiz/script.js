@@ -128,10 +128,15 @@ enviarBtn.addEventListener('click', () =>{
             <button onclick="location.reload()">Reiniciar</button>`;
         }
     }
+
+    deselectResposta();
+    
 });
 
-//function deselectResposta() {
-//    respostaEls.forEach((respostaEl) => {
-//        respostaEl.checked = false;
-//    });
-//}
+function deselectResposta() {
+    const respostaEls = document.querySelectorAll ('.resposta');
+    
+    respostaEls.forEach((respostaEl) => {
+        respostaEl.checked = false;
+    });
+}
